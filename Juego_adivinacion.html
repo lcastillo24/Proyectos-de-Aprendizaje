@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA JUEGO DE ADIVINAR!</h1>
+
+<script>
+
+  function saltolínea() {
+    document.write("<br>");
+    document.write("<br>");
+  }
+  
+  function imprimir(frase) {
+     document.write(frase);
+     saltolínea();
+  }
+
+    var númeroPensado = Math.round(Math.random()*10);
+    var intentos = 3;
+    var contador = 1;
+
+    while (contador <= intentos){
+    var númeroLanzado = parseInt(prompt("Ingrese un número entre 0 y 10"));
+    if (númeroPensado == númeroLanzado) {
+        alert("Usted acertó, en el intento #  " + contador + " el número pensado es " + númeroPensado);
+        break;
+        
+    }
+
+
+    else {
+        alert("Usted erró" );
+          
+    }
+      contador++;
+    }
+
+    if (númeroPensado == númeroLanzado) {
+       imprimir("Usted acertó, en el intento #  " + contador + " el número pensado es " + númeroPensado);
+        
+        
+    }
+
+
+    else {
+        imprimir("Usted erró el número pensado era " + númeroPensado );
+}
+
+
+    imprimir("Fin");
+</script>

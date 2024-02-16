@@ -1,0 +1,44 @@
+<canvas width="600" height="400"></canvas> 
+
+
+<script>
+	
+	var pantalla = document.querySelector("canvas"); //esto es lo que permite el canvas en java//
+	var pincel = pantalla.getContext("2d");// pincel es el lapiz para dibujar
+	pincel.fillStyle = "lightgrey" // este define el color del canvas,propiedad
+	pincel.fillRect (0,0,600,400); //rectangulo padron (eje x, eje y, ancho, alto)
+	
+	function disenharCircunferencia(x,y,radio){
+		pincel.fillStyle = "blue";
+		pincel.beginPath();// esto le dice que empezar a dibujar y no se le pone nada en () para luego dar coordenadas 
+		pincel.arc(x,y,radio,0,2*Math.PI);//dibuja la circunferencia ,recibe cordenadas horizontal (x) y vertical(y), luego radio, angulo inicial y final en radiales (2*Math.Pi)
+
+		pincel.fill();
+//llena circunferencia
+	}
+		
+	function limpiarPantalla(){
+		pincel.clearRect(0,0,600,400);
+	}
+	
+	var x=0
+	 var sentido = 1
+	function actualizarPantalla() {
+		limpiarPantalla();
+		if (x>600) {
+			sentido = -1;
+		} 
+		else {
+			if (x<0){
+				sentido = 1}
+		}
+		disenharCircunferencia(x,20,10);
+		x= x +sentido;
+		
+	}
+	setInterval(actualizarPantalla,1);
+	
+		
+		
+
+</script>

@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA IMPRIMIR *!</h1>
+
+<script>
+
+  function saltolínea() {
+    document.write("<br>");
+    document.write("<br>");
+  }
+  
+  function imprimir(frase) {
+     document.write(frase);
+     saltolínea();
+  }
+    for (var lineas = 1 ; lineas <= 3; lineas++){
+
+        for (var columnas = 1; columnas <= 10; columnas++){
+          document.write("*");
+        }
+
+      saltolínea();
+    }
+    
+    saltolínea();
+    saltolínea();
+   
+  
+
+    imprimir("Fin");
+</script>
